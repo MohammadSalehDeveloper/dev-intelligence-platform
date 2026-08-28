@@ -1,0 +1,13 @@
+{
+	"name": "@dev-intelligence/database",
+	"version": "1.0.0",
+	"type": "module",
+	"main": "./src/client.ts",
+	"exports": {
+		".": "./src/client.ts"
+	},
+	"dependencies": {
+		"@prisma/client": "^6.16.2",
+		"prisma": "^6.16.2"
+	}
+}
