@@ -1,0 +1,14 @@
+---
+description: Clean Code and design-pattern expectations
+alwaysApply: true
+---
+
+# Clean Code and patterns
+
+- Names reveal intent. Functions do one thing. Avoid dead code and commented-out blocks.
+- Prefer small modules over god files. Extract only when a real boundary exists.
+- Depend inward: UI → API client; HTTP modules → ports; persistence stays in `packages/database`.
+- Use existing patterns (Fastify plugin, feature module, Next.js App Router) before introducing new ones.
+- Validate at boundaries (for example Zod on HTTP input). Do not leak persistence types into the UI.
+- Handle errors; do not swallow them. Log with context, return a clear status.
+- No drive-by refactors. Do not “clean-arch-ify” working code unless the user asked.

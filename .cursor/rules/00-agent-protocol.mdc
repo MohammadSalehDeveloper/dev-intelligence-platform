@@ -1,0 +1,36 @@
+---
+description: Non-negotiable agent gates for this repository (git, architecture, docs, tests)
+alwaysApply: true
+---
+
+# Agent protocol (hard gates)
+
+Read `AGENTS.md` and `docs/agents/PROTOCOL.md`. These gates override convenience.
+
+## 1. Git
+
+- Never `git commit`, `git push`, amend, or skip hooks.
+- Propose a commit message only. The user commits.
+
+## 2. Architecture freeze
+
+- Do not change architecture, layers, infrastructure, domain, persistence, or packages without asking, explaining, and waiting for approval.
+- Do not add apps, workspace packages, Docker services, or new top-level folders without approval.
+
+## 3. Craft and stack
+
+- Clean Architecture, Clean Code, Design Patterns.
+- React/Next.js in `apps/web`. Node.js/Fastify in `apps/api`. Prisma/Postgres + Redis as they exist today.
+
+## 4. Commit docs
+
+- For every proposed commit, add `docs/commits/<YYYY-MM-DD>-<slug>.md`.
+
+## 5. Feature docs
+
+- Document new features, layers, models, infra, and technologies under `docs/`.
+
+## 6. Tests
+
+- Add unit tests for new functionality, features, stories, and infra.
+- If no test runner exists, ask before adding a package. Do not skip tests silently.

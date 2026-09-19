@@ -1,0 +1,32 @@
+---
+description: Frozen clean-architecture boundaries for this monorepo
+alwaysApply: true
+---
+
+# Architecture guard
+
+Ask, explain, and wait before changing layers, infra, domain, persistence, or packages.
+
+## Frozen map
+
+| Area | Path | Responsibility |
+| --- | --- | --- |
+| Presentation | `apps/web` | React/Next.js UI, hooks, feature folders, API client |
+| HTTP / use-case entry | `apps/api/src/modules` | Fastify feature routes |
+| Infra adapters | `apps/api/src/plugins`, `apps/api/src/lib` | Cookies, Prisma plugin, Redis |
+| Persistence | `packages/database` | Prisma client and schema |
+| Infra | `infra/docker` | PostgreSQL, Redis |
+
+## Do not do without approval
+
+- New `packages/*`, `apps/*`, `services/*`, or Docker services
+- New layers (`domain/`, `application/`, `infrastructure/`, hexagonal ports)
+- Prisma schema / domain model changes
+- Moving code across the table above
+- Introducing a new ORM, queue, auth provider, or state library
+
+## Do instead
+
+- Extend the existing module/plugin/feature pattern.
+- Keep UI out of the API and Prisma out of `apps/web`.
+- If a change needs a new boundary, stop and propose it in chat first.

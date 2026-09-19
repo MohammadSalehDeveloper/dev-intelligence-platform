@@ -1,0 +1,14 @@
+---
+description: Node.js and Fastify conventions for apps/api
+globs: apps/api/**/*.ts
+alwaysApply: false
+---
+
+# Backend (`apps/api`)
+
+- Fastify ESM (`type: module`). Register plugins and feature modules the way `server.ts` already does.
+- New HTTP features go in `src/modules/<feature>/`. Shared adapters go in `src/plugins/` or `src/lib/`.
+- Do not reach into `apps/web`. Persist through `@dev-intelligence/database`, not a second Prisma client.
+- Validate request input. Keep secrets in env. Do not log access tokens.
+- Do not add Fastify plugins, queues, or extra databases without approval.
+- Do not split current modules into domain/application/infra folders unless the user approved that layer change.

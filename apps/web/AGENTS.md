@@ -1,3 +1,5 @@
+Repo-wide agent protocol: see root `AGENTS.md` and `docs/agents/PROTOCOL.md`. Do not commit; do not change architecture without approval.
+
 <!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 

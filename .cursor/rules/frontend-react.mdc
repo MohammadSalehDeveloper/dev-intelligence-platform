@@ -1,0 +1,15 @@
+---
+description: React and Next.js conventions for apps/web
+globs: apps/web/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+
+# Frontend (`apps/web`)
+
+- Next.js App Router + React. Read `apps/web/AGENTS.md` before using Next APIs.
+- Keep the existing folders: `app/`, `components/`, `features/`, `hooks/`, `services/`, `store/`, `types/`.
+- Pages stay thin. Feature logic lives in `features/` or hooks. HTTP calls live in `services/`.
+- Functional components. Extract a hook when stateful logic is reused or noisy.
+- Do not import Prisma or Fastify internals from the web app.
+- Do not add UI libraries, state libraries, or CSS frameworks without approval.
+- Verify UI changes in the browser when tools exist; otherwise say what you could not verify.

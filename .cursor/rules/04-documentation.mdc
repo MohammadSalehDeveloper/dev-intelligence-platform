@@ -1,0 +1,24 @@
+---
+description: Required documentation for commits, features, layers, models, and infra
+alwaysApply: true
+---
+
+# Documentation protocol
+
+Work is incomplete without docs.
+
+## Every proposed commit
+
+Create `docs/commits/<YYYY-MM-DD>-<slug>.md` from `docs/templates/commit.md`.
+Explain **why**, not only what changed. Include architecture impact: `none` or `pending approval`.
+
+## New work
+
+| Kind | Location |
+| --- | --- |
+| Feature / story | `docs/features/<name>.md` from `docs/templates/feature.md` |
+| Layer or package | `docs/architecture/` |
+| Domain / persistence model | `docs/architecture/models.md` (create if missing) |
+| Infra / technology | `docs/architecture/` or `docs/infra/` |
+
+Keep `docs/README.md` as the index. Do not dump architecture essays into code comments.

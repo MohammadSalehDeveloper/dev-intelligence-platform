@@ -1,0 +1,13 @@
+---
+description: Unit tests are required for new functionality
+alwaysApply: true
+---
+
+# Testing protocol
+
+- Add unit tests for new functionality, features, stories, and infra.
+- Colocate as `*.test.ts` / `*.test.tsx` next to the unit, or under a nearby `__tests__` folder.
+- Test behavior at the unit boundary: pure functions, use-case logic, mappers, validators. Mock I/O (Prisma, Redis, GitHub, fetch).
+- Do not add Jest/Vitest/Playwright packages, or change test scripts, without asking.
+- If tooling is missing, ask to add a runner (prefer Vitest for this Node/React workspace) and still write the test files.
+- Do not finish with “tests left as follow-up” unless the user agreed.
